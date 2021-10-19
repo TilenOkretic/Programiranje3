@@ -1,4 +1,4 @@
-package normalna_verzija;
+package sekvencna_verzija;
 import java.util.Random;
 
 /*
@@ -17,7 +17,7 @@ public class Main {
         int [][] matrixB = new int[n][n];
 
         int [][] RS = new int[n][n];
-        int [][] RP = new int[n][n];
+        int [][] RP = new int[n][n]; // unused v tem primeru
 
         Random rand = new Random();
 

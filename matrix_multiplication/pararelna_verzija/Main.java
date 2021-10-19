@@ -17,7 +17,7 @@ public class Main {
         int [][] matrixA = new int[n][n];
         int [][] matrixB = new int[n][n];
 
-        int [][] RS = new int[n][n];
+        int [][] RS = new int[n][n]; // unused v tem primeru
         int [][] RP = new int[n][n];
 
         Random rand = new Random();
@@ -29,6 +29,7 @@ public class Main {
             }    
         } 
 
+        // pararelna prvi nacin
         long t0 = System.currentTimeMillis();
         Worker[] workers = new Worker[n];
         for(int i = 0; i < workers.length;i++){
@@ -45,6 +46,48 @@ public class Main {
         long t1 = System.currentTimeMillis();
 
         // cas izvajanaja
-        System.out.println(t1-t0 + " ms");
+        System.out.println("Pararelni cas 1: " + (t1-t0) + " ms");
+
+        // pararelna drugi nacin
+
+        // dobimo st procesorjev
+        long t2 = System.currentTimeMillis();
+
+        int threads = Runtime.getRuntime().availableProcessors();
+        // "delo" radelimo na kose
+        int chunk = n / threads;
+        
+        Banana[] bananas = new Banana[threads];
+        for(int i = 0; i < threads;i++) {
+            if(i==threads - 1) {
+                bananas[i] = new Banana(i*chunk, n, RP, matrixA, matrixB);
+            }
+            bananas[i] = new Banana(i*chunk, i*chunk+chunk, RP, matrixA, matrixB);
+            bananas[i].start();
+        }
+
+        for(int i = 0; i < bananas.length;i++) {
+            try {
+                bananas[i].join();
+            } catch (Exception e) {
+            }
+        }
+
+        long t3 = System.currentTimeMillis();
+        // cas izvajanaja boljse verzije
+        System.out.println("Pararelni cas 2: " + (t3-t2) + " ms");
+
+
+        // System.out.println("Matriki sta enaki: " + isEqual(RP, RS));
+    }
+
+    // Za primirjanje RP in RS
+    public static boolean isEqual(int[][] A, int[][] B) {
+        for (int i = 0; i < B.length; i++) {
+            for (int j = 0; j < B.length; j++) {
+                if(A[i][j] != B[i][j]) return false;
+            }   
+        }
+        return true;
     }
 }
