@@ -61,9 +61,10 @@ public class Main {
         for(int i = 0; i < threads;i++) {
             if(i==threads - 1) {
                 bananas[i] = new Banana(i*chunk, n, RP, matrixA, matrixB);
+            } else {
+                bananas[i] = new Banana(i*chunk, i*chunk+chunk, RP, matrixA, matrixB);
+                bananas[i].start();
             }
-            bananas[i] = new Banana(i*chunk, i*chunk+chunk, RP, matrixA, matrixB);
-            bananas[i].start();
         }
 
         for(int i = 0; i < bananas.length;i++) {
