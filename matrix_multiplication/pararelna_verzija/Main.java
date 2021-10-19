@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Pararelna Verzija");
 
-        int n = 1500;
+        int n = 2000;
         int [][] matrixA = new int[n][n];
         int [][] matrixB = new int[n][n];
 
