@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "matrix_multiplication",
+        "26102021/Maximalni_Element",
+        "26102021/Executor"
+    ],
+    "java.format.settings.url": "eclipse-formatter.xml"
+}
