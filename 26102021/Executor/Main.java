@@ -9,8 +9,7 @@ import java.util.concurrent.Executors;
 */
 public class Main {
     public static void main(String[] args) {
-        int numberOfThreads = 12;
-        ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
+        ExecutorService executorService = Executors.newCachedThreadPool();
         int tasks = 20;
 
         for(int i = 0; i < tasks; i++) {
