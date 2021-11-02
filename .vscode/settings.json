@@ -1,7 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "26102021/Maximalni_Element",
-        "02112021"
+        "26102021/Maximalni_Element"
     ],
     "java.format.settings.url": "eclipse-formatter.xml"
 }
