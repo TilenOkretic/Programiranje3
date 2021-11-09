@@ -2,7 +2,6 @@ import java.util.concurrent.Semaphore;
 
 public class Main {
     
-    
     public static void main(String[] args) {
         Semaphore sem = new Semaphore(4);
         System.out.println("Total number of permits: " + sem.availablePermits());
