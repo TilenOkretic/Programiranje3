@@ -44,3 +44,10 @@
   * pthread_cond_wait - omogoca 2 operaciji na enkrat ... pogojna sinhronizacija
   * pthread_cond_signal
   * pthread_cond_broadcast
+
+## Fubkcije za delo z nitmi
+
+* morajo omogocati varno delo z nitmi
+* standardne funkcije ne smejo vplivati ena na drugo
+
+
