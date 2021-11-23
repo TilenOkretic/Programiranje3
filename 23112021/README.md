@@ -50,4 +50,15 @@
 * morajo omogocati varno delo z nitmi
 * standardne funkcije ne smejo vplivati ena na drugo
 
+----
+
+# Monitorji
+
+* Kar mmonitorji delajo boljse od semaforjev je to da scitijo programerja pred samim sabo
+* Niso "bolj mocni" od semaforjev
+* Zdruzujejo spremenljivke, funkcije, postopke zacetnih nastavitev v eni skupni abstraktni podatkovni stukturi
+
+## Uporaba monitorjev
+* za izvajanje atomarnih operacij in ukazev
+
 
